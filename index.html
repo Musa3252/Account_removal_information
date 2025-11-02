@@ -8,72 +8,95 @@
   <meta name="robots" content="noindex" />
   <style>
     :root{
-      --bg:#0e1117;--card:#161b22;--text:#e6edf3;--muted:#9da7b3;--border:#242a35;
-      --accent:#7aa2ff;--radius:16px;--shadow:0 10px 30px rgba(0,0,0,.35);
-      --success:#2ecc71;--warn:#f1c40f;--danger:#ff7675
+      --blue:#1a73e8;           /* Google sky blue */
+      --text:#202124;           /* Google text */
+      --muted:#5f6368;          /* Secondary text */
+      --border:#dadce0;         /* Divider */
+      --bg:#ffffff;             /* White background */
+      --radius:12px;
     }
     *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,Apple Color Emoji,Segoe UI Emoji;background:var(--bg);color:var(--text)}
-    .wrap{max-width:940px;margin:auto;padding:28px 20px}
-    header{display:grid;gap:10px;margin-bottom:18px}
-    h1{margin:0;font-size:clamp(22px,4vw,36px)}
-    p.lead{margin:0;color:var(--muted)}
-    .card{background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,0));border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}
-    .stack{display:grid;gap:14px}
-    h2,h3{margin:0 0 8px}
-    h2{font-size:clamp(18px,2.8vw,26px)}
-    h3{font-size:clamp(16px,2.2vw,20px);color:var(--muted)}
-    .muted{color:var(--muted)}
-    .bullets{padding-left:18px;margin:8px 0 0}
-    .bullets li{margin:6px 0}
-    .note{font-size:13px;color:var(--muted)}
-    a{color:var(--accent);text-decoration:none}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.5;
+    }
+    a{color:var(--blue);text-decoration:none}
     a:hover{text-decoration:underline}
-    .section{padding:16px;border:1px solid var(--border);border-radius:14px;background:#0c111b66}
-    .cta{display:inline-block;background:var(--accent);color:#0b1020;border:none;border-radius:12px;padding:12px 16px;font-weight:600;text-decoration:none}
-    .cta:focus,.cta:hover{filter:brightness(.95)}
-    .badge{display:inline-block;font-size:12px;padding:3px 8px;border-radius:999px;border:1px solid var(--border);color:var(--muted)}
-    .grid-2{display:grid;gap:14px}
-    @media(min-width:860px){.grid-2{grid-template-columns:1.2fr .8fr}}
-    iframe{width:100%;min-height:760px;border:0;border-radius:12px;background:#0b1020}
-    footer{margin-top:22px;color:var(--muted);font-size:13px;text-align:center}
-    .kicker{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+    .wrap{max-width:880px;margin:auto;padding:24px 16px}
+    header{padding:8px 0 16px;border-bottom:1px solid var(--border);margin-bottom:16px}
+    .product{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+    .chip{
+      display:inline-block;
+      border:1px solid var(--border);
+      border-radius:999px;
+      padding:2px 8px;
+      font-size:12px;
+      color:var(--muted);
+    }
+    h1{font-size:clamp(24px,4vw,32px);margin:8px 0 4px}
+    p.lead{margin:0;color:var(--muted)}
+    main{display:grid;gap:16px;margin-top:16px}
+    section{border:1px solid var(--border);border-radius:var(--radius);padding:16px;background:#fff}
+    h2{font-size:clamp(18px,2.6vw,22px);margin:0 0 8px}
+    .note{font-size:13px;color:var(--muted)}
+    ul{margin:8px 0 0;padding-left:18px}
+    .grid{
+      display:grid;gap:16px
+    }
+    @media(min-width:860px){.grid{grid-template-columns:1fr 1fr}}
+    .btn{
+      display:inline-block;background:var(--blue);color:#fff;border:none;
+      padding:10px 14px;border-radius:8px;font-weight:600;text-align:center
+    }
+    .btn:hover,.btn:focus{filter:brightness(.98);text-decoration:none}
+    iframe{
+      width:100%;min-height:680px;border:1px solid var(--border);border-radius:10px;background:#fff
+    }
+    footer{margin:24px 0 8px;color:var(--muted);font-size:13px;text-align:center}
+    /* Accessibility helpers */
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
   </style>
 </head>
 <body>
+  <a class="sr-only" href="#request">Skip to deletion request</a>
+
   <div class="wrap">
-    <header>
-      <div class="kicker">
-        <span class="badge">axcebded</span>
-        <span class="badge">Account &amp; Data Deletion</span>
-        <span class="badge">Public — No login required</span>
+    <header role="banner" aria-label="Page header">
+      <div class="product">
+        <span class="chip">axcebded</span>
+        <span class="chip">Account deletion</span>
+        <span class="chip">Public — No login</span>
       </div>
       <h1>Delete your account</h1>
-      <p class="lead">Use the form below to request permanent deletion of your axcebded account and associated personal data. This page is public and does not require you to sign in.</p>
+      <p class="lead">Request permanent deletion of your axcebded account and personal data. This page is public and does not require sign-in.</p>
     </header>
 
-    <div class="stack">
+    <main role="main">
       <!-- Overview -->
-      <section class="card section" aria-labelledby="overview">
+      <section aria-labelledby="overview">
         <h2 id="overview">Overview</h2>
-        <p>When you request deletion, we disable your account and start removing your personal data after a short grace period. Some limited records may be retained where required by law (e.g., billing and security logs).</p>
-        <p class="note">You can also trigger deletion from inside the app: <em>Profile → Settings → Account → Delete account</em>.</p>
+        <p>When you request deletion, we disable your account and begin removing your personal data after a short grace period. Some limited records may be retained where required by law (for example, billing or security logs).</p>
+        <p class="note">You can also request deletion in-app: <em>Profile → Settings → Account → Delete account</em>.</p>
       </section>
 
       <!-- What deletes / remains -->
-      <div class="grid-2">
-        <section class="card section" aria-labelledby="what-deletes">
+      <div class="grid" aria-label="What changes after deletion">
+        <section aria-labelledby="what-deletes">
           <h2 id="what-deletes">What gets deleted</h2>
-          <ul class="bullets">
+          <ul>
             <li>Your profile, login, and personal settings.</li>
             <li>Personal content stored only in your account space (e.g., drafts, private notes).</li>
             <li>Connected devices and active sessions are revoked.</li>
           </ul>
         </section>
 
-        <section class="card section" aria-labelledby="what-remains">
+        <section aria-labelledby="what-remains">
           <h2 id="what-remains">What may remain</h2>
-          <ul class="bullets">
+          <ul>
             <li>Content others still rely on (e.g., messages in shared threads) to preserve conversation history.</li>
             <li>Minimal records required for legal, fraud-prevention, or billing purposes.</li>
             <li>Encrypted backups purge on their normal rotation schedule.</li>
@@ -82,29 +105,27 @@
       </div>
 
       <!-- Timeline -->
-      <section class="card section" aria-labelledby="timeline">
+      <section aria-labelledby="timeline">
         <h2 id="timeline">Timeline</h2>
-        <ul class="bullets">
+        <ul>
           <li><strong>Request:</strong> Submit the form below. We may ask you to verify via email.</li>
           <li><strong>Grace period:</strong> Account is disabled for a short period (typically 7–30 days). Signing in during this time may cancel deletion.</li>
           <li><strong>Permanent removal:</strong> After the grace period, your account and eligible data are permanently deleted. Backups purge on their cycle.</li>
         </ul>
       </section>
 
-      <!-- Embedded Google Form -->
-      <section class="card section" aria-labelledby="request">
+      <!-- Request form -->
+      <section aria-labelledby="request">
         <h2 id="request">Submit a deletion request</h2>
-        <p class="muted">Complete the form below. For fastest processing, include the email you used to sign up and (if available) your in-app User ID.</p>
+        <p class="note">Include the email you used to sign up and, if available, your in-app User ID for faster processing.</p>
 
-        <!-- Embedded Form (uses your URL with ?embedded=true) -->
         <iframe
           title="Account deletion request — axcebded"
           src="https://docs.google.com/forms/d/e/1FAIpQLSd0IyiGVc8Vgn3vumNRthZpNOZzXdLmXJNRGh1hCfGA5HURyw/viewform?embedded=true">
         </iframe>
 
-        <!-- Fallback CTA (opens the same form in a new tab) -->
         <p style="margin-top:12px">
-          <a class="cta" target="_blank" rel="noopener"
+          <a class="btn" target="_blank" rel="noopener"
              href="https://docs.google.com/forms/d/e/1FAIpQLSd0IyiGVc8Vgn3vumNRthZpNOZzXdLmXJNRGh1hCfGA5HURyw/viewform?usp=publish-editor">
             Open the request form in a new tab
           </a>
@@ -114,9 +135,9 @@
       </section>
 
       <!-- Before you delete -->
-      <section class="card section" aria-labelledby="before-delete">
+      <section aria-labelledby="before-delete">
         <h2 id="before-delete">Before you delete</h2>
-        <ul class="bullets">
+        <ul>
           <li>Export any data you want to keep.</li>
           <li>Cancel active subscriptions to avoid future charges.</li>
           <li>Make sure you’re requesting deletion for the correct account/email.</li>
@@ -124,18 +145,18 @@
       </section>
 
       <!-- Help & policies -->
-      <section class="card section" aria-labelledby="help">
+      <section aria-labelledby="help">
         <h2 id="help">Help &amp; policies</h2>
-        <p class="muted">
-          Need assistance? Email <a href="mailto:support@example.com">support@example.com</a>.
+        <p class="note">
+          Need assistance? Email <a href="mailto:mmcdarlington@gmail.com">mmcdarlington@gmail.com</a>.
           For details on data categories, retention and exceptions, see our
           <a href="#" rel="nofollow">Privacy Policy</a> and <a href="#" rel="nofollow">Terms of Service</a>.
         </p>
       </section>
-    </div>
+    </main>
 
-    <footer>
-      This page is public and informational. Submitting a request here or in-app starts the deletion process.
+    <footer role="contentinfo">
+      <p class="note">This page is public and informational. Submitting a request here or in-app starts the deletion process.</p>
     </footer>
   </div>
 </body>
