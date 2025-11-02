@@ -3,123 +3,139 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Account Deletion Information — axcended</title>
-  <meta name="description" content="Plain‑language explanation of how account deletion works for our app. No forms or actions here; deletion happens in the mobile app." />
+  <title>Delete Your Account — axcebded</title>
+  <meta name="description" content="Public, no-login page to request permanent deletion of your axcebded account and personal data, in line with Google Play User Data policies." />
+  <meta name="robots" content="noindex" />
   <style>
-    :root {
-      --bg: #0e1117;
-      --card: #161b22;
-      --text: #e6edf3;
-      --muted: #9da7b3;
-      --border: #242a35;
-      --accent: #7aa2ff;
-      --radius: 16px;
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    :root{
+      --bg:#0e1117;--card:#161b22;--text:#e6edf3;--muted:#9da7b3;--border:#242a35;
+      --accent:#7aa2ff;--radius:16px;--shadow:0 10px 30px rgba(0,0,0,.35);
+      --success:#2ecc71;--warn:#f1c40f;--danger:#ff7675
     }
-    * { box-sizing: border-box; }
-    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji; background: var(--bg); color: var(--text); }
-    .wrap { max-width: 940px; margin: auto; padding: 28px 20px; }
-    header { display: grid; gap: 8px; margin-bottom: 18px; }
-    h1 { margin: 0; font-size: clamp(22px, 4vw, 36px); }
-    p.lead { margin: 0; color: var(--muted); }
-
-    .card { background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.0)); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 18px; }
-    .stack { display: grid; gap: 14px; }
-    h2, h3 { margin: 0 0 8px; }
-    h2 { font-size: clamp(18px, 2.8vw, 26px); }
-    h3 { font-size: clamp(16px, 2.2vw, 20px); color: var(--muted); }
-    .muted { color: var(--muted); }
-    .bullets { padding-left: 18px; margin: 8px 0 0; }
-    .bullets li { margin: 6px 0; }
-    .note { font-size: 13px; color: var(--muted); }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .section { padding: 16px; border: 1px solid var(--border); border-radius: 14px; background: #0c111b66; }
-    footer { margin-top: 22px; color: var(--muted); font-size: 13px; text-align: center; }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,Apple Color Emoji,Segoe UI Emoji;background:var(--bg);color:var(--text)}
+    .wrap{max-width:940px;margin:auto;padding:28px 20px}
+    header{display:grid;gap:10px;margin-bottom:18px}
+    h1{margin:0;font-size:clamp(22px,4vw,36px)}
+    p.lead{margin:0;color:var(--muted)}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,0));border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}
+    .stack{display:grid;gap:14px}
+    h2,h3{margin:0 0 8px}
+    h2{font-size:clamp(18px,2.8vw,26px)}
+    h3{font-size:clamp(16px,2.2vw,20px);color:var(--muted)}
+    .muted{color:var(--muted)}
+    .bullets{padding-left:18px;margin:8px 0 0}
+    .bullets li{margin:6px 0}
+    .note{font-size:13px;color:var(--muted)}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .section{padding:16px;border:1px solid var(--border);border-radius:14px;background:#0c111b66}
+    .cta{display:inline-block;background:var(--accent);color:#0b1020;border:none;border-radius:12px;padding:12px 16px;font-weight:600;text-decoration:none}
+    .cta:focus,.cta:hover{filter:brightness(.95)}
+    .badge{display:inline-block;font-size:12px;padding:3px 8px;border-radius:999px;border:1px solid var(--border);color:var(--muted)}
+    .grid-2{display:grid;gap:14px}
+    @media(min-width:860px){.grid-2{grid-template-columns:1.2fr .8fr}}
+    iframe{width:100%;min-height:760px;border:0;border-radius:12px;background:#0b1020}
+    footer{margin-top:22px;color:var(--muted);font-size:13px;text-align:center}
+    .kicker{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
-      <h1>Account Deletion Information</h1>
-      <p class="lead">This page explains how deleting your account works. You cannot delete your account here — please use the mobile app to complete deletion.</p>
+      <div class="kicker">
+        <span class="badge">axcebded</span>
+        <span class="badge">Account &amp; Data Deletion</span>
+        <span class="badge">Public — No login required</span>
+      </div>
+      <h1>Delete your account</h1>
+      <p class="lead">Use the form below to request permanent deletion of your axcebded account and associated personal data. This page is public and does not require you to sign in.</p>
     </header>
 
     <div class="stack">
+      <!-- Overview -->
       <section class="card section" aria-labelledby="overview">
         <h2 id="overview">Overview</h2>
-        <p>Deleting your account permanently removes your profile and most personal data after a short grace period. Some limited records may be kept where required by law. You can find the <strong>Delete account</strong> option inside the app: <em>Profile &rarr; Settings &rarr; Account &rarr; Delete account</em>.</p>
+        <p>When you request deletion, we disable your account and start removing your personal data after a short grace period. Some limited records may be retained where required by law (e.g., billing and security logs).</p>
+        <p class="note">You can also trigger deletion from inside the app: <em>Profile → Settings → Account → Delete account</em>.</p>
       </section>
 
-      <section class="card section" aria-labelledby="axcebded">
-        <h2 id="axcebded">axcebded</h2>
-        <p class="muted">The information on this page applies to the axcebded app experience. If you have multiple accounts, you must request deletion for each account separately inside the app.</p>
-      </section>
+      <!-- What deletes / remains -->
+      <div class="grid-2">
+        <section class="card section" aria-labelledby="what-deletes">
+          <h2 id="what-deletes">What gets deleted</h2>
+          <ul class="bullets">
+            <li>Your profile, login, and personal settings.</li>
+            <li>Personal content stored only in your account space (e.g., drafts, private notes).</li>
+            <li>Connected devices and active sessions are revoked.</li>
+          </ul>
+        </section>
 
-      <section class="card section" aria-labelledby="what-deletes">
-        <h2 id="what-deletes">What gets deleted</h2>
-        <ul class="bullets">
-          <li>Your profile, login credentials, and personal settings.</li>
-          <li>Personal content stored only in your account space (e.g., drafts, private notes).</li>
-          <li>Connected devices and active sessions are revoked.</li>
-        </ul>
-      </section>
+        <section class="card section" aria-labelledby="what-remains">
+          <h2 id="what-remains">What may remain</h2>
+          <ul class="bullets">
+            <li>Content others still rely on (e.g., messages in shared threads) to preserve conversation history.</li>
+            <li>Minimal records required for legal, fraud-prevention, or billing purposes.</li>
+            <li>Encrypted backups purge on their normal rotation schedule.</li>
+          </ul>
+        </section>
+      </div>
 
-      <section class="card section" aria-labelledby="what-remains">
-        <h2 id="what-remains">What may remain</h2>
-        <ul class="bullets">
-          <li>Content shown to others in shared contexts (e.g., messages in group threads) may remain to preserve conversation history.</li>
-          <li>Minimal records required for legal, fraud‑prevention, or billing purposes (e.g., invoices, security logs) may be retained for a limited time.</li>
-          <li>Data in encrypted backups is removed on their regular rotation schedule.</li>
-        </ul>
-      </section>
-
+      <!-- Timeline -->
       <section class="card section" aria-labelledby="timeline">
         <h2 id="timeline">Timeline</h2>
         <ul class="bullets">
-          <li><strong>Request:</strong> Start deletion inside the app. We may ask you to confirm via email or in‑app.</li>
-          <li><strong>Grace period:</strong> Your account is disabled for a short period (typically 7–30 days). Signing in during this time can cancel deletion.</li>
+          <li><strong>Request:</strong> Submit the form below. We may ask you to verify via email.</li>
+          <li><strong>Grace period:</strong> Account is disabled for a short period (typically 7–30 days). Signing in during this time may cancel deletion.</li>
           <li><strong>Permanent removal:</strong> After the grace period, your account and eligible data are permanently deleted. Backups purge on their cycle.</li>
         </ul>
       </section>
 
+      <!-- Embedded Google Form -->
+      <section class="card section" aria-labelledby="request">
+        <h2 id="request">Submit a deletion request</h2>
+        <p class="muted">Complete the form below. For fastest processing, include the email you used to sign up and (if available) your in-app User ID.</p>
+
+        <!-- Embedded Form (uses your URL with ?embedded=true) -->
+        <iframe
+          title="Account deletion request — axcebded"
+          src="https://docs.google.com/forms/d/e/1FAIpQLSd0IyiGVc8Vgn3vumNRthZpNOZzXdLmXJNRGh1hCfGA5HURyw/viewform?embedded=true">
+        </iframe>
+
+        <!-- Fallback CTA (opens the same form in a new tab) -->
+        <p style="margin-top:12px">
+          <a class="cta" target="_blank" rel="noopener"
+             href="https://docs.google.com/forms/d/e/1FAIpQLSd0IyiGVc8Vgn3vumNRthZpNOZzXdLmXJNRGh1hCfGA5HURyw/viewform?usp=publish-editor">
+            Open the request form in a new tab
+          </a>
+        </p>
+
+        <p class="note">If the form fails to load, use the button above or email us.</p>
+      </section>
+
+      <!-- Before you delete -->
       <section class="card section" aria-labelledby="before-delete">
         <h2 id="before-delete">Before you delete</h2>
         <ul class="bullets">
           <li>Export any data you want to keep.</li>
-          <li>Cancel subscriptions to avoid future charges.</li>
-          <li>Ensure you are signed in to the correct account on your device.</li>
+          <li>Cancel active subscriptions to avoid future charges.</li>
+          <li>Make sure you’re requesting deletion for the correct account/email.</li>
         </ul>
       </section>
 
-      <section class="card section" aria-labelledby="how-to">
-        <h2 id="how-to">How to delete your account (in the app)</h2>
-        <ol class="bullets">
-          <li>Open the axcebded app and sign in to the account you want to delete.</li>
-          <li>Go to <em>Profile &rarr; Settings &rarr; Account</em>.</li>
-          <li>Choose <strong>Delete account</strong> and follow the prompts.</li>
-        </ol>
-        <p class="note">If you don’t see the option, update the app to the latest version.</p>
-      </section>
-
-      <section class="card section" aria-labelledby="faqs">
-        <h2 id="faqs">FAQs</h2>
-        <h3>Can I reverse deletion?</h3>
-        <p class="muted">If a grace period is available, sign in again before it ends to cancel deletion. After permanent removal, it cannot be undone.</p>
-        <h3>How long will it take?</h3>
-        <p class="muted">Most deletions complete within 7–30 days after confirmation. Backup removal may take longer based on rotation schedules.</p>
-        <h3>Need help?</h3>
-        <p class="muted">Contact support from inside the app (<em>Profile &rarr; Help & support</em>) or email <a href="mailto:support@example.com">support@example.com</a>.</p>
-      </section>
-
-      <section class="card section" aria-labelledby="policies">
-        <h2 id="policies">Policies</h2>
-        <p class="muted">For full details, review our <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a>. These documents govern data retention requirements and exceptions.</p>
+      <!-- Help & policies -->
+      <section class="card section" aria-labelledby="help">
+        <h2 id="help">Help &amp; policies</h2>
+        <p class="muted">
+          Need assistance? Email <a href="mailto:support@example.com">support@example.com</a>.
+          For details on data categories, retention and exceptions, see our
+          <a href="#" rel="nofollow">Privacy Policy</a> and <a href="#" rel="nofollow">Terms of Service</a>.
+        </p>
       </section>
     </div>
 
     <footer>
-      This page is informational only and not legal advice. Deletion actions must be performed in the mobile app.
+      This page is public and informational. Submitting a request here or in-app starts the deletion process.
     </footer>
   </div>
 </body>
